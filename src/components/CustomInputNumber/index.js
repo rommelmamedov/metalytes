@@ -1,11 +1,11 @@
 import './style.css';
 
-export const CustomInputNumber = ({ value, onDecrementButtonClick, onIncrementButtonClick }) => (
+export const CustomInputNumber = ({ value, onChange, onDecrementButtonClick, onIncrementButtonClick }) => (
 	<div className="custom-number-input">
 		<button className="decrement" onClick={onDecrementButtonClick}>
 			-
 		</button>
-		<input id="quantity" type="number" value={value} readOnly disabled />
+		<input id="quantity" type="text" maxLength="3" value={value} onChange={onChange} />
 		<button className="increment" onClick={onIncrementButtonClick}>
 			+
 		</button>

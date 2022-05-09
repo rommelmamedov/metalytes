@@ -30,6 +30,7 @@
   color: white;
 }
 
+.custom-number-input input:focus,
 .custom-number-input button:focus {
   outline: none;
 }

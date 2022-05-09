@@ -70,6 +70,8 @@ body {
 
 .stepper {
   width: 532px;
+  height: 100%;
+  padding-top: 50px;
   /* padding: 70px 100px 0; */
   /* Note */
   /* clip-path: polygon(100% 0, 100% 90%, 90% 100%, 0 100%, 0 80%, 0% 0%); */

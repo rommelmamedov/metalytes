@@ -10,15 +10,21 @@ import './style.css';
 export const SelectQuantity = ({ setCurrentStep }) => {
 	const [quantity, setQuantity] = useState(1);
 	const handleIncrementButtonClick = useCallback(() => {
-		setQuantity(quantity => quantity + 1);
+		setQuantity(quantity => (quantity < 1000 ? Number(quantity) + 1 : quantity));
 	}, [setQuantity]);
 
 	const handleDecrementButtonClick = useCallback(() => {
-		setQuantity(quantity => quantity - 1);
+		setQuantity(quantity => (quantity > 1 ? Number(quantity) - 1 : quantity));
 	}, [setQuantity]);
 
+	const handleChange = useCallback(
+		event => {
+			setQuantity(event.target.value.replace(/\D/g, ''));
+		},
+		[setQuantity]
+	);
+
 	const handleSubmitButtonClick = useCallback(() => {
-		console.log('Mint');
 		setCurrentStep(currentStep => currentStep + 1);
 	}, [setCurrentStep]);
 
@@ -29,7 +35,7 @@ export const SelectQuantity = ({ setCurrentStep }) => {
 			<label htmlFor="quantity">Quantity</label>
 			<div className="quantity">
 				<div className="quantity-form">
-					<CustomInputNumber value={quantity} onIncrementButtonClick={handleIncrementButtonClick} onDecrementButtonClick={handleDecrementButtonClick} />
+					<CustomInputNumber value={quantity} onChange={handleChange} onIncrementButtonClick={handleIncrementButtonClick} onDecrementButtonClick={handleDecrementButtonClick} />
 					<SubmitButton text="Mint Now" onClick={handleSubmitButtonClick} />
 				</div>
 				<div className="quantity-price">
