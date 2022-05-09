@@ -6,10 +6,11 @@ import { SubmitButton } from 'components/SubmitButton';
 
 import './style.css';
 
-export const OrderSummary = () => {
+export const OrderSummary = ({ setCurrentStep }) => {
 	const handleSubmitButtonClick = useCallback(() => {
 		console.log('Confirm');
-	}, []);
+		setCurrentStep(currentStep => currentStep + 1);
+	}, [setCurrentStep]);
 
 	return (
 		<section className="order-summary">

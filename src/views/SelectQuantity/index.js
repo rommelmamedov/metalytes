@@ -7,7 +7,7 @@ import { CustomInputNumber } from 'components/CustomInputNumber';
 
 import './style.css';
 
-export const SelectQuantity = () => {
+export const SelectQuantity = ({ setCurrentStep }) => {
 	const [quantity, setQuantity] = useState(1);
 	const handleIncrementButtonClick = useCallback(() => {
 		setQuantity(quantity => quantity + 1);
@@ -19,7 +19,8 @@ export const SelectQuantity = () => {
 
 	const handleSubmitButtonClick = useCallback(() => {
 		console.log('Mint');
-	}, []);
+		setCurrentStep(currentStep => currentStep + 1);
+	}, [setCurrentStep]);
 
 	return (
 		<section className="select-quantity">
