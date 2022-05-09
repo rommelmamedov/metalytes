@@ -1,0 +1,90 @@
+:root {
+  --gray: #969696;
+  --fs-10: 10px;
+  --fs-11: 11px;
+  --fs-12: 12px;
+  --fs-14: 14px;
+  --fs-16: 16px;
+  --fs-17: 17px;
+  --fs-20: 20px;
+  --fs-23: 23px;
+  --fs-26: 26px;
+  --fs-36: 36px;
+  --fs-42: 42px;
+  --ff-light: 'Monument Extended Light', sans-serif;
+  --ff-regular: 'Monument Extended Regular', sans-serif;
+  --ff-bold: 'Monument Extended Bold', sans-serif;
+  --fw-lighter: lighter;
+  --fw-normal: normal;
+  --fw-bold: bold;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+html,
+#root {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  font-family: var(--ff-regular);
+  color: white;
+  background-color: black;
+  font-size: var(--fs-14);
+  line-height: 1.4;
+  font-weight: normal;
+}
+
+.left,
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 100%;
+  /* width: calc(53.2vw); */
+  width: calc(50vw);
+  background-color: black;
+}
+
+.left {
+  left: 0;
+  z-index: 5;
+}
+
+.right {
+  right: 0;
+  z-index: 10;
+}
+
+.video {
+  width: 100%;
+  object-fit: cover;
+}
+
+.stepper {
+  width: 532px;
+  /* padding: 70px 100px 0; */
+  /* Note */
+  /* clip-path: polygon(100% 0, 100% 90%, 90% 100%, 0 100%, 0 80%, 0% 0%); */
+}
+
+/* .background { */
+/* background-size: cover; */
+/* background-repeat: no-repeat; */
+/* background-image: url('../assets/images/bg.jpg'); */
+/* } */
+
+label {
+  display: inline-block;
+  font-size: var(--fs-11);
+  /* line-height: 1.5;*/
+  text-transform: uppercase;
+  margin-bottom: 13px;
+}

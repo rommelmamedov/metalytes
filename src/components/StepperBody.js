@@ -1,9 +1,13 @@
-import { ConnectWallet } from 'components/ConnectWallet';
-import { SelectQuantity } from 'components/SelectQuantity';
+import { FinalStep } from 'views/FinalStep';
+import { OrderSummary } from 'views/OrderSummary';
+import { ConnectWallet } from 'views/ConnectWallet';
+import { SelectQuantity } from 'views/SelectQuantity';
 
 export const StepperBody = () => (
 	<main className="stepper-body">
-		<ConnectWallet />
+		{/* <ConnectWallet /> */}
 		{/* <SelectQuantity /> */}
+		{/* <OrderSummary /> */}
+		<FinalStep />
 	</main>
 );

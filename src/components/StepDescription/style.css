@@ -1,0 +1,9 @@
+p.step-description {
+  font-family: var(--ff-light);
+  font-weight: var(--fw-lighter);
+  font-size: var(--fs-12);
+  /* line-height: 1.65;*/
+  color: var(--gray);
+  margin-top: 0;
+  margin-bottom: 50px;
+}

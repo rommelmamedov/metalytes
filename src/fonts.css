@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'Monument Extended Light';
+  src: url('assets/fonts/monument-extended-light.woff2') format('woff2');
+  font-weight: var(--fw-lighter);
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Monument Extended Regular';
+  src: url('assets/fonts/monument-extended-regular.woff2') format('woff2');
+  font-weight: var(--fw-normal);
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Monument Extended Bold';
+  src: url('assets/fonts/monument-extended-bold.woff2') format('woff2');
+  font-weight: var(--fw-bold);
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,3 +1,5 @@
+import './style.css';
+
 export const StepperNav = () => (
 	<nav className="stepper-nav">
 		<ul>
