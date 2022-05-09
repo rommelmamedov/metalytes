@@ -37,7 +37,7 @@ body {
   color: white;
   background-color: black;
   font-size: var(--fs-14);
-  line-height: 1.4;
+  line-height: 1.5;
   font-weight: normal;
 }
 
@@ -84,7 +84,6 @@ body {
 label {
   display: inline-block;
   font-size: var(--fs-11);
-  /* line-height: 1.5;*/
   text-transform: uppercase;
   margin-bottom: 13px;
 }

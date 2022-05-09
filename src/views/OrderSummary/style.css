@@ -37,7 +37,6 @@
   font-weight: var(--fw-bold);
   font-style: normal;
   font-size: var(--fs-13);
-  line-height: 16px;
   color: var(--gray);
   text-transform: uppercase;
 }
@@ -46,7 +45,7 @@
   display: flex;
   justify-content: space-between;
   font-size: var(--fs-17);
-  line-height: 20px;
+  line-height: 1;
   margin-top: 30px;
   margin-bottom: 50px;
 }

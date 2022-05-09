@@ -7,7 +7,7 @@ export const StepperBody = () => (
 	<main className="stepper-body">
 		{/* <ConnectWallet /> */}
 		{/* <SelectQuantity /> */}
-		{/* <OrderSummary /> */}
-		<FinalStep />
+		<OrderSummary />
+		{/* <FinalStep /> */}
 	</main>
 );
