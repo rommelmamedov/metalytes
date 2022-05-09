@@ -1,7 +1,7 @@
 import './style.css';
 
-export const SubmitButton = ({ text, onClick }) => (
-	<button className="submit-button" onClick={onClick}>
+export const SubmitButton = ({ text, variant, onClick }) => (
+	<button className="submit-button" onClick={onClick} data-variant={variant}>
 		{text}
 	</button>
 );
