@@ -13,6 +13,7 @@ const localStorageEffect =
 		});
 	};
 
+export const connectorAtom = atom({ key: 'connector', default: null });
 export const currentStepAtom = atom({ key: 'currentStep', default: 1, effects: [localStorageEffect('currentStep')] });
 export const accountNumberAtom = atom({ key: 'accountNumber', default: null, effects: [localStorageEffect('accountNumber')] });
 export const isAccountActiveAtom = atom({ key: 'isAccountActive', default: false, effects: [localStorageEffect('isAccountActive')] });

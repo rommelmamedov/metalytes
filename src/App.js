@@ -1,14 +1,17 @@
 import { useRecoilValue } from 'recoil';
 
+import { FinalStep } from 'views/FinalStep';
+import { OrderSummary } from 'views/OrderSummary';
+import { ConnectWallet } from 'views/ConnectWallet';
+import { SelectQuantity } from 'views/SelectQuantity';
 import { StepperNav } from 'components/StepperNav';
-import { StepperBody } from 'components/StepperBody';
 import { StepperHeader } from 'components/StepperHeader';
 
 import { currentStepAtom } from 'atoms';
 
-import poster from 'assets/poster.jpg';
 import mp4 from 'assets/videos/bg.mp4';
 import webm from 'assets/videos/bg.webm';
+import poster from 'assets/videos/poster.jpg';
 
 export const App = () => {
 	const currentStep = useRecoilValue(currentStepAtom);
@@ -19,7 +22,12 @@ export const App = () => {
 				<div className="stepper">
 					{currentStep !== 1 && <StepperHeader />}
 					<StepperNav />
-					<StepperBody currentStep={currentStep} />
+					<main className="stepper-body">
+						{currentStep === 1 && <ConnectWallet />}
+						{currentStep === 2 && <SelectQuantity />}
+						{currentStep === 3 && <OrderSummary />}
+						{currentStep === 4 && <FinalStep />}
+					</main>
 				</div>
 			</div>
 			<div className="right">

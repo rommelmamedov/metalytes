@@ -4,10 +4,10 @@ import { createRoot } from 'react-dom/client';
 import { Web3ReactProvider } from '@web3-react/core';
 import { Web3Provider } from '@ethersproject/providers';
 
-import { App } from 'components/App';
+import { App } from 'App';
 
-import 'fonts.css';
-import 'index.css';
+import 'styles/fonts.css';
+import 'styles/index.css';
 
 const getLibrary = provider => {
 	const library = new Web3Provider(provider, 'any');
@@ -20,12 +20,12 @@ const root = createRoot(document.getElementById('root'));
 
 root.render(
 	<StrictMode>
-		<Suspense fallback="Loading...">
-			<Web3ReactProvider getLibrary={getLibrary}>
+		<Web3ReactProvider getLibrary={getLibrary}>
+			<Suspense fallback="Loading...">
 				<RecoilRoot>
 					<App />
 				</RecoilRoot>
-			</Web3ReactProvider>
-		</Suspense>
+			</Suspense>
+		</Web3ReactProvider>
 	</StrictMode>
 );
