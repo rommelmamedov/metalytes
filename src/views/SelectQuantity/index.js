@@ -39,7 +39,6 @@ export const SelectQuantity = () => {
 			<div className="quantity">
 				<div className="quantity-form">
 					<CustomInputNumber value={quantity} onChange={handleChange} onIncrementButtonClick={handleIncrementButtonClick} onDecrementButtonClick={handleDecrementButtonClick} />
-					<SubmitButton text="Mint Now" onClick={handleSubmitButtonClick} />
 				</div>
 				<div className="quantity-price">
 					<em>Price</em>
@@ -47,6 +46,7 @@ export const SelectQuantity = () => {
 					<small>$3,031.18 USD</small>
 				</div>
 			</div>
+			<SubmitButton text="Mint Now" onClick={handleSubmitButtonClick} />
 		</section>
 	);
 };

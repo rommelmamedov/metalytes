@@ -25,11 +25,11 @@ export const OrderSummary = () => {
 				}
 			/>
 			<div className="wallets">
-				<WalletNumber number={accountNumber} slicer={10} />
+				<WalletNumber number={accountNumber} slicer={window.innerWidth > 700 ? 10 : 6} />
 				<WalletNumber
 					// TODO: Minter account number
 					number={accountNumber}
-					slicer={10}
+					slicer={window.innerWidth > 700 ? 10 : 6}
 				/>
 			</div>
 			<ul className="summary-table">

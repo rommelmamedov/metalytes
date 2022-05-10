@@ -1,0 +1,30 @@
+.stepper-mobile-nav {
+	display: none;
+	margin-top: 60px;
+	margin-bottom: 30px;
+}
+
+.stepper-mobile-nav ul {
+	display: flex;
+	justify-content: space-between;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.stepper-mobile-nav ul li {
+	width: 70px;
+	height: 5px;
+	border-radius: 40px;
+	background-color: #fff;
+}
+
+.stepper-mobile-nav ul li.active {
+	background-color: #303030;
+}
+
+@media only screen and (max-width: 700px) {
+	.stepper-mobile-nav {
+		display: block;
+	}
+}

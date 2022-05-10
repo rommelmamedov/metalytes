@@ -1,54 +1,76 @@
 .connection-button {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  color: white;
-  background-color: #111111;
-  border-radius: 10px;
-  border: 0;
-  padding: 10px 15px;
-  width: 100%;
-  border: 1px solid transparent;
-  background-repeat: no-repeat;
-  background-position: 95% 50%;
-  background-image: url("data:image/svg+xml,%3Csvg width='26' height='16' viewBox='0 0 26 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M25.707 8.707a1 1 0 0 0 0-1.414L19.343.929a1 1 0 1 0-1.414 1.414L23.586 8l-5.657 5.657a1 1 0 0 0 1.414 1.414l6.364-6.364ZM0 9h25V7H0v2Z' fill='%23fff' /%3E%3C/svg%3E");
-  transition: all ease-in-out 0.3s;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	color: white;
+	background-color: #111111;
+	border-radius: 10px;
+	border: 0;
+	padding: 10px 15px;
+	width: 100%;
+	border: 1px solid transparent;
+	background-repeat: no-repeat;
+	background-position: 95% 50%;
+	background-image: url("data:image/svg+xml,%3Csvg width='26' height='16' viewBox='0 0 26 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M25.707 8.707a1 1 0 0 0 0-1.414L19.343.929a1 1 0 1 0-1.414 1.414L23.586 8l-5.657 5.657a1 1 0 0 0 1.414 1.414l6.364-6.364ZM0 9h25V7H0v2Z' fill='%23fff' /%3E%3C/svg%3E");
+	transition: all ease-in-out 0.3s;
 }
 
 .connection-button[data-outline='true'] {
-  border: 1px solid var(--gray)
+	border: 1px solid var(--gray);
 }
 
 .connection-button:hover,
 .connection-button:focus {
-  background-position: 96.5% 50%;
+	background-position: 96.5% 50%;
 }
 
 .connection-button:not(:last-child) {
-  margin-bottom: 15px;
+	margin-bottom: 15px;
 }
 
 .connection-button img {
-  width: 77px;
-  height: 77px;
-  margin-right: 20px;
-  object-fit: contain;
+	width: 77px;
+	height: 77px;
+	margin-right: 20px;
+	object-fit: contain;
 }
 
 .connection-button .title-wrapper {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  text-transform: uppercase;
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	text-transform: uppercase;
 }
 
 .connection-button span {
-  font-size: var(--fs-11);
-  color: var(--gray);
+	display: block;
+	font-size: var(--fs-11);
+	color: var(--gray);
+	margin-bottom: 2px;
 }
 
 .connection-button strong {
-  font-family: var(--ff-bold);
-  font-weight: var(--fw-bold);
-  font-size: var(--fs-26);
+	font-family: var(--ff-bold);
+	font-weight: var(--fw-bold);
+	font-size: var(--fs-26);
+}
+
+@media only screen and (max-width: 700px) {
+	.connection-button {
+		padding: 8px 12px;
+	}
+
+	.connection-button:not(:last-child) {
+		margin-bottom: 10px;
+	}
+
+	.connection-button img {
+		width: 56px;
+		height: 56px;
+		margin-right: 10px;
+	}
+
+	.connection-button strong {
+		font-size: var(--fs-20);
+	}
 }

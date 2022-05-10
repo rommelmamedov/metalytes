@@ -1,14 +1,24 @@
 .wallet-number-confirmation {
-  display: block;
-  font-size: 10px;
-  padding: 13px 30px;
-  background-color: #111111;
-  border: 1px solid #1F1F1F;
-  border-radius: 10px;
-  margin: 30px 0;
+	display: block;
+	font-size: 10px;
+	padding: 13px 30px;
+	background-color: #111111;
+	border: 1px solid #1f1f1f;
+	border-radius: 10px;
+	margin: 30px 0;
+	word-break: break-all;
 }
 
 .final-step-buttons {
-  display: flex;
-  justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
+}
+
+@media only screen and (max-width: 700px) {
+	.final-step-buttons {
+		justify-content: center;
+	}
+	[data-variant='secondary'] {
+		display: none;
+	}
 }

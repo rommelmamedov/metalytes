@@ -1,56 +1,63 @@
 .order-summary .wallets {
-  display: flex;
-  margin-bottom: 40px;
+	display: flex;
+	margin-bottom: 40px;
 }
 
 .order-summary .wallets .wallet-number:first-child::after {
-  content: '';
-  width: 25px;
-  height: 12px;
-  margin-left: 50px;
-  margin-right: 50px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  transform: rotate(180deg);
-  background-image: url("data:image/svg+xml,%3Csvg width='26' height='16' viewBox='0 0 26 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M.293 7.293a1 1 0 0 0 0 1.414l6.364 6.364a1 1 0 0 0 1.414-1.414L2.414 8l5.657-5.657A1 1 0 0 0 6.657.93L.293 7.293ZM26 7H1v2h25V7Z' fill='%23fff'/%3E%3C/svg%3E");
+	content: '';
+	width: 25px;
+	height: 12px;
+	margin-left: 50px;
+	margin-right: 50px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	transform: rotate(180deg);
+	background-image: url("data:image/svg+xml,%3Csvg width='26' height='16' viewBox='0 0 26 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M.293 7.293a1 1 0 0 0 0 1.414l6.364 6.364a1 1 0 0 0 1.414-1.414L2.414 8l5.657-5.657A1 1 0 0 0 6.657.93L.293 7.293ZM26 7H1v2h25V7Z' fill='%23fff'/%3E%3C/svg%3E");
 }
 
 .summary-table {
-  padding: 0;
-  margin: 0;
-  list-style: none;
+	padding: 0;
+	margin: 0;
+	list-style: none;
 }
 
 .summary-table li {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 10px;
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 10px;
 }
 
 .summary-table li:not(:last-child) {
-  border-bottom: 1px solid #1c1c1c;
-  margin-bottom: 10px;
+	border-bottom: 1px solid #1c1c1c;
+	margin-bottom: 10px;
 }
 
 .order-summary em {
-  font-family: var(--ff-bold);
-  font-weight: var(--fw-bold);
-  font-style: normal;
-  font-size: var(--fs-13);
-  color: var(--gray);
-  text-transform: uppercase;
+	font-family: var(--ff-bold);
+	font-weight: var(--fw-bold);
+	font-style: normal;
+	font-size: var(--fs-13);
+	color: var(--gray);
+	text-transform: uppercase;
 }
 
 .summary-total {
-  display: flex;
-  justify-content: space-between;
-  font-size: var(--fs-17);
-  line-height: 1;
-  margin-top: 30px;
-  margin-bottom: 50px;
+	display: flex;
+	justify-content: space-between;
+	font-size: var(--fs-17);
+	line-height: 1;
+	margin-top: 30px;
+	margin-bottom: 50px;
 }
 
 .order-summary .submit-button {
-  display: block;
-  margin: 0 auto;
+	display: block;
+	margin: 0 auto;
+}
+
+@media only screen and (max-width: 700px) {
+	.order-summary .wallets .wallet-number:first-child::after {
+		margin-left: 30px;
+		margin-right: 30px;
+	}
 }

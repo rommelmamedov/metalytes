@@ -1,54 +1,59 @@
 .stepper-nav ul {
-  display: flex;
-  padding: 0;
-  margin: 0;
-  list-style: none;
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
 }
 
 .stepper-nav ul li {
-  font-size: var(--fs-10);
-  line-height: 1.2;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  color: var(--gray);
+	font-size: var(--fs-10);
+	line-height: 1.2;
+	text-transform: uppercase;
+	display: flex;
+	align-items: center;
+	color: var(--gray);
 }
 
 .stepper-nav ul li.active {
-  color: white;
+	color: white;
 }
 
 .stepper-nav ul li::before {
-  content: attr(data-number);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  margin-right: 12px;
-  border-radius: 50%;
-  border: 1px solid var(--gray);
-  font-family: var(--ff-bold);
-  font-weight: var(--fw-bold);
-  font-size: var(--fs-12);
+	content: attr(data-number);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 36px;
+	height: 36px;
+	margin-right: 12px;
+	border-radius: 50%;
+	border: 1px solid var(--gray);
+	font-family: var(--ff-bold);
+	font-weight: var(--fw-bold);
+	font-size: var(--fs-12);
 }
 
-
 .stepper-nav ul li.active::before {
-  color: black;
-  background-color: white;
-  border: 1px solid white;
+	color: black;
+	background-color: white;
+	border: 1px solid white;
 }
 
 .stepper-nav ul li:not(:first-child) {
-  margin-left: 20px;
+	margin-left: 20px;
 }
 
 .stepper-nav ul li:not(:last-child)::after {
-  content: '';
-  display: inline-block;
-  width: 40px;
-  height: 1px;
-  background-color: var(--gray);
-  margin-left: 30px;
+	content: '';
+	display: inline-block;
+	width: 40px;
+	height: 1px;
+	background-color: var(--gray);
+	margin-left: 30px;
+}
+
+@media only screen and (max-width: 700px) {
+	.stepper-nav {
+		display: none;
+	}
 }

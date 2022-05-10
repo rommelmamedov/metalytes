@@ -15,7 +15,7 @@ export const StepperNav = () => {
 				<li className={currentStep === 2 ? 'active' : ''} data-number="02">
 					Select <br /> Quantity
 				</li>
-				<li className={currentStep === 3 ? 'active' : ''} data-number="03">
+				<li className={currentStep === 3 || currentStep === 4 ? 'active' : ''} data-number="03">
 					Mint <br /> Metalytes
 				</li>
 			</ul>

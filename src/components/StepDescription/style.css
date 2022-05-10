@@ -1,8 +1,16 @@
 p.step-description {
-  font-family: var(--ff-light);
-  font-weight: var(--fw-lighter);
-  font-size: var(--fs-12);
-  color: var(--gray);
-  margin-top: 0;
-  margin-bottom: 40px;
+	font-family: var(--ff-light);
+	font-weight: var(--fw-lighter);
+	font-size: var(--fs-12);
+	color: var(--gray);
+	margin-top: 0;
+	margin-bottom: 40px;
+}
+
+@media only screen and (max-width: 700px) {
+	p.step-description {
+		font-family: var(--ff-normal);
+		font-size: 10px;
+		margin-bottom: 20px;
+	}
 }
