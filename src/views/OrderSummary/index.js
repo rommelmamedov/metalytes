@@ -1,14 +1,17 @@
 import { useCallback } from 'react';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
 
 import { StepHeading } from 'components/StepHeading';
 import { WalletNumber } from 'components/WalletNumber';
 import { SubmitButton } from 'components/SubmitButton';
 
+import { accountNumberAtom, currentStepAtom } from 'atoms';
 import './style.css';
 
-export const OrderSummary = ({ setCurrentStep }) => {
+export const OrderSummary = () => {
+	const accountNumber = useRecoilValue(accountNumberAtom);
+	const setCurrentStep = useSetRecoilState(currentStepAtom);
 	const handleSubmitButtonClick = useCallback(() => {
-		console.log('Confirm');
 		setCurrentStep(currentStep => currentStep + 1);
 	}, [setCurrentStep]);
 
@@ -22,8 +25,12 @@ export const OrderSummary = ({ setCurrentStep }) => {
 				}
 			/>
 			<div className="wallets">
-				<WalletNumber number="0xB10975FF2aC535B2516816B480456bf48B0AFB6A" slicer={10} />
-				<WalletNumber number="0xB10975FF2aC535B2516816B480456bf48B0AFB6A" slicer={10} />
+				<WalletNumber number={accountNumber} slicer={10} />
+				<WalletNumber
+					// TODO: Minter account number
+					number={accountNumber}
+					slicer={10}
+				/>
 			</div>
 			<ul className="summary-table">
 				<li>

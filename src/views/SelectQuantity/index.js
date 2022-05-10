@@ -1,3 +1,4 @@
+import { useSetRecoilState } from 'recoil';
 import { useState, useCallback } from 'react';
 
 import { StepHeading } from 'components/StepHeading';
@@ -5,9 +6,11 @@ import { SubmitButton } from 'components/SubmitButton';
 import { StepDescription } from 'components/StepDescription';
 import { CustomInputNumber } from 'components/CustomInputNumber';
 
+import { currentStepAtom } from 'atoms';
 import './style.css';
 
-export const SelectQuantity = ({ setCurrentStep }) => {
+export const SelectQuantity = () => {
+	const setCurrentStep = useSetRecoilState(currentStepAtom);
 	const [quantity, setQuantity] = useState(1);
 	const handleIncrementButtonClick = useCallback(() => {
 		setQuantity(quantity => (quantity < 1000 ? Number(quantity) + 1 : quantity));

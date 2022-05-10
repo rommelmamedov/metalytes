@@ -3,11 +3,11 @@ import { OrderSummary } from 'views/OrderSummary';
 import { ConnectWallet } from 'views/ConnectWallet';
 import { SelectQuantity } from 'views/SelectQuantity';
 
-export const StepperBody = ({ currentStep, setCurrentStep }) => (
+export const StepperBody = ({ currentStep }) => (
 	<main className="stepper-body">
-		{currentStep === 1 && <ConnectWallet setCurrentStep={setCurrentStep} />}
-		{currentStep === 2 && <SelectQuantity setCurrentStep={setCurrentStep} />}
-		{currentStep === 3 && <OrderSummary setCurrentStep={setCurrentStep} />}
-		{currentStep === 4 && <FinalStep setCurrentStep={setCurrentStep} />}
+		{currentStep === 1 && <ConnectWallet />}
+		{currentStep === 2 && <SelectQuantity />}
+		{currentStep === 3 && <OrderSummary />}
+		{currentStep === 4 && <FinalStep />}
 	</main>
 );
