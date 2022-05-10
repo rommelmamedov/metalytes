@@ -18,7 +18,7 @@ export const App = () => {
 			<div className="left">
 				<div className="stepper">
 					{currentStep !== 1 && <StepperHeader />}
-					<StepperNav currentStep={currentStep} />
+					<StepperNav />
 					<StepperBody currentStep={currentStep} />
 				</div>
 			</div>
@@ -28,7 +28,6 @@ export const App = () => {
 					<source src={mp4} type="video/mp4" />
 				</video>
 			</div>
-			{/* <div className="background" /> */}
 		</>
 	);
 };

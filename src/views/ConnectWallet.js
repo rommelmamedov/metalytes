@@ -16,10 +16,12 @@ export const ConnectWallet = () => {
 	const setCurrentStep = useSetRecoilState(currentStepAtom);
 	const setAccountNumber = useSetRecoilState(accountNumberAtom);
 	const setIsAccountActive = useSetRecoilState(isAccountActiveAtom);
-
-	const { active, account, activate, deactivate } = useWeb3React();
-	console.log('🚀 ~ file: ConnectWallet.js ~ line 18 ~ ConnectWal ~ active', active);
-	console.log('🚀 ~ file: ConnectWallet.js ~ line 18 ~ ConnectWal ~ account', account);
+	const {
+		active,
+		account,
+		activate,
+		// deactivate
+	} = useWeb3React();
 
 	useEffect(() => {
 		if (active && account) {
