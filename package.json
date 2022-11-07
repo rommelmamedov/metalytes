@@ -22,6 +22,9 @@
     "stream-browserify": "^3.0.0",
     "util": "^0.12.4"
   },
+  "resolutions": {
+    "memfs": "3.4.7"
+  },
   "scripts": {
     "start": "react-app-rewired start",
     "start:https": "HTTPS=true react-app-rewired start",
