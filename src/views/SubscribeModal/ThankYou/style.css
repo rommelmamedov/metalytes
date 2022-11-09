@@ -2,8 +2,22 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     align-content: center;
     justify-content: center;
+}
+
+.success-view {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;  
+}
+
+.success-view .submit-button {
+    width: 330px;
 }
 
 h1.heading {

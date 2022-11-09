@@ -41,7 +41,7 @@ export const SubscribeModal = () => {
 			<div className="modal-content">
 				{currentStep === 1 && <EnterEmail onCompleted={handleEnterEmailCompleted} />}
 				{currentStep === 2 && <ConnectWallet onCompleted={handleConnectWalletCompleted} />}
-				{currentStep === 3 && <ThankYou email={email} walletAddress={walletAddress} />}
+				{currentStep === 3 && <ThankYou email={email} walletAddress={walletAddress} onCompleted={closeModal} />}
 			</div>
 		</Modal>
 	);
