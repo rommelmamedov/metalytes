@@ -3,6 +3,7 @@ import React from 'react';
 
 import { EnterEmail } from './EnterEmail';
 import { ThankYou } from './ThankYou';
+import { ConnectWallet } from './ConnectWallet';
 import './style.css';
 
 Modal.setAppElement('#root');
@@ -24,6 +25,12 @@ export const SubscribeModal = () => {
 		setCurrentStep(2);
 	}
 
+	function handleConnectWalletCompleted(_walletAddress) {
+		console.log('handleConnectWalletCompleted, walletAddress: ' + _walletAddress);
+		setWalletAddress(_walletAddress);
+		setCurrentStep(3);
+	}
+
 	return (
 		<Modal isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel="Example Modal" className="Modal">
 			<div className="modal-header">
@@ -33,7 +40,8 @@ export const SubscribeModal = () => {
 			</div>
 			<div className="modal-content">
 				{currentStep === 1 && <EnterEmail onCompleted={handleEnterEmailCompleted} />}
-				{currentStep === 2 && <ThankYou email={email} walletAddress={walletAddress} />}
+				{currentStep === 2 && <ConnectWallet onCompleted={handleConnectWalletCompleted} />}
+				{currentStep === 3 && <ThankYou email={email} walletAddress={walletAddress} />}
 			</div>
 		</Modal>
 	);
