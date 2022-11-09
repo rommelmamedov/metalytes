@@ -1,0 +1,52 @@
+.Modal {
+    background-color: #111111;
+    height: 500px;
+    border-radius: 10px;
+    border-width: 0;
+
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 85%;
+    transform: translate(-50%, -50%);
+	padding: 13px 30px; */
+	
+	
+
+    display: flex;
+    flex-direction: column;
+    
+	
+
+    z-index: 1;
+}
+
+.Modal:focus {
+    outline: none;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: right;
+}
+
+.modal-content {
+    display: flex;
+    flex: 1;
+    align-self: stretch;
+}
+
+.close-button {
+    height: 40px;
+    font-size: medium;
+}
+
+h1.step-heading {
+	font-size: var(--fs-36);
+	line-height: 100%;
+	letter-spacing: 0.02em;
+	margin-top: 50px;
+	text-transform: uppercase;
+    text-align: center;
+  
+}

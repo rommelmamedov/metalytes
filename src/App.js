@@ -7,6 +7,7 @@ import { SelectQuantity } from 'views/SelectQuantity';
 import { StepperNav } from 'components/StepperNav';
 import { StepperNavMobile } from 'components/StepperNavMobile';
 import { StepperHeader } from 'components/StepperHeader';
+import { SubscribeModal } from 'views/SubscribeModal';
 
 import { currentStepAtom } from 'atoms';
 
@@ -40,6 +41,7 @@ export const App = () => {
 					<source src={mp4} type="video/mp4" />
 				</video>
 			</div>
+			<SubscribeModal />
 		</>
 	);
 };
