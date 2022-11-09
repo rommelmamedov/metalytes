@@ -46,7 +46,10 @@ export const ConnectWallet = ({ onCompleted }) => {
 
 	return (
 		<section className="connect-wallet">
-			<h1 className="heading"> Connect your wallet to sign up for later</h1>
+			<h1 className="heading">
+				{' '}
+				Connect your wallet <br></br> to sign up for later
+			</h1>
 			<div className="connection-options">
 				<ConnectionButton icon={metamaskIcon} title="Metamask" onClick={handleMetamaskClick} />
 				<ConnectionButton icon={coinbaseIcon} title="Coinbase" onClick={handleCoinbaseClick} />
