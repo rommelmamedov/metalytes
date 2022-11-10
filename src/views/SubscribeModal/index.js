@@ -1,5 +1,6 @@
 import ReactModal from 'react-modal';
 import React from 'react';
+import { VscChromeClose } from 'react-icons/vsc';
 
 import { EnterEmail } from './EnterEmail';
 import { ThankYou } from './ThankYou';
@@ -34,7 +35,7 @@ export const SubscribeModal = () => {
 	return (
 		<ReactModal isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel="Example Modal" className="subscribe-modal" overlayClassName="subscribe-modal-overlay">
 			<button className="close-button" onClick={closeModal}>
-				X
+				<VscChromeClose className="close-icon" />
 			</button>
 			<div className="content">
 				{currentStep === 1 && <EnterEmail onCompleted={handleEnterEmailCompleted} />}
