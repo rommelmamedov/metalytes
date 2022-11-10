@@ -1,4 +1,4 @@
-import Modal from 'react-modal';
+import ReactModal from 'react-modal';
 import React from 'react';
 
 import { EnterEmail } from './EnterEmail';
@@ -6,7 +6,7 @@ import { ThankYou } from './ThankYou';
 import { ConnectWallet } from './ConnectWallet';
 import './style.css';
 
-Modal.setAppElement('#root');
+ReactModal.setAppElement('#root');
 
 export const SubscribeModal = () => {
 	const [modalIsOpen, setIsOpen] = React.useState(true);
@@ -32,17 +32,15 @@ export const SubscribeModal = () => {
 	}
 
 	return (
-		<Modal isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel="Example Modal" className="Modal">
-			<div className="modal-header">
-				<button className="close-button" onClick={closeModal}>
-					close
-				</button>
-			</div>
-			<div className="modal-content">
+		<ReactModal isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel="Example Modal" className="subscribe-modal" overlayClassName="subscribe-modal-overlay">
+			<button className="close-button" onClick={closeModal}>
+				X
+			</button>
+			<div className="content">
 				{currentStep === 1 && <EnterEmail onCompleted={handleEnterEmailCompleted} />}
 				{currentStep === 2 && <ConnectWallet onCompleted={handleConnectWalletCompleted} />}
 				{currentStep === 3 && <ThankYou email={email} walletAddress={walletAddress} onCompleted={closeModal} />}
 			</div>
-		</Modal>
+		</ReactModal>
 	);
 };

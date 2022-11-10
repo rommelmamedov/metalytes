@@ -13,11 +13,11 @@ export const ThankYou = ({ email, walletAddress, onCompleted }) => {
 
 	useEffect(() => {
 		if (didSubscribe == false) {
-			console.log('handleSubmit with email: ' + email);
+			console.log('Subscribe with email: ' + email);
 			mailchimpSubscribe({ EMAIL: email, MERGE1: walletAddress });
 			didSubscribe = true;
 		}
-	});
+	}, [email, walletAddress]);
 
 	return (
 		<MailchimpSubscribe
