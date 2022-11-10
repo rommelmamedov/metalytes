@@ -5,7 +5,7 @@ import { StepDescription } from 'components/StepDescription';
 import { SubscribeTextField } from 'components/SubscribeTextField';
 import './style.css';
 
-export const EnterEmail = ({ onCompleted }) => {
+export const EnterEmailView = ({ onCompleted }) => {
 	const [email, setEmail] = useState('');
 	const [emailError, setEmailError] = useState('');
 

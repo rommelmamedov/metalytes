@@ -8,7 +8,7 @@ import walletConnectIcon from 'assets/images/wallet-connect.svg';
 
 import './style.css';
 
-export const ConnectWallet = ({ onCompleted }) => {
+export const ConnectWalletView = ({ onCompleted }) => {
 	const { active, account, activate } = useWeb3React();
 
 	useEffect(() => {

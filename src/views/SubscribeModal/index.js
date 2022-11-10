@@ -2,9 +2,9 @@ import ReactModal from 'react-modal';
 import React from 'react';
 import { VscChromeClose } from 'react-icons/vsc';
 
-import { EnterEmail } from './EnterEmail';
-import { ThankYou } from './ThankYou';
-import { ConnectWallet } from './ConnectWallet';
+import { EnterEmailView } from './EnterEmailView';
+import { ConnectWalletView } from './ConnectWalletView';
+import { FinalView } from './FinalView';
 import './style.css';
 
 ReactModal.setAppElement('#root');
@@ -33,14 +33,14 @@ export const SubscribeModal = () => {
 	}
 
 	return (
-		<ReactModal isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel="Example Modal" className="subscribe-modal" overlayClassName="subscribe-modal-overlay">
+		<ReactModal isOpen={modalIsOpen} onRequestClose={closeModal} className="subscribe-modal" overlayClassName="subscribe-modal-overlay">
 			<button className="close-button" onClick={closeModal}>
 				<VscChromeClose className="close-icon" />
 			</button>
 			<div className="content">
-				{currentStep === 1 && <EnterEmail onCompleted={handleEnterEmailCompleted} />}
-				{currentStep === 2 && <ConnectWallet onCompleted={handleConnectWalletCompleted} />}
-				{currentStep === 3 && <ThankYou email={email} walletAddress={walletAddress} onCompleted={closeModal} />}
+				{currentStep === 1 && <EnterEmailView onCompleted={handleEnterEmailCompleted} />}
+				{currentStep === 2 && <ConnectWalletView onCompleted={handleConnectWalletCompleted} />}
+				{currentStep === 3 && <FinalView email={email} walletAddress={walletAddress} onCompleted={closeModal} />}
 			</div>
 		</ReactModal>
 	);
