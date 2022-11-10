@@ -3,12 +3,24 @@
     top: 50%;
     left: 50%;
     width: 85%;
+    max-width: 800px;
     height: 550px;
     transform: translate(-50%, -50%);
-
     border-radius: 10px;
     border-width: 0;
-    background-color: black;
+    background-color: #030303;
+}
+
+.subscribe-modal .header {
+	font-family: 'Monument Extended Regular';
+    font-weight: 700;
+    font-size: 36px;
+    letter-spacing: 0.02em;
+    line-height: 100%;
+	text-transform: uppercase;
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .subscribe-modal-overlay {
@@ -17,7 +29,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(136, 136, 136, 0.586);
+    background-color: #ffffff55;
   }
 
 .subscribe-modal:focus {
@@ -34,6 +46,7 @@
     color: rgb(255, 255, 255);
     border-width: 0;
     z-index: 2;
+    transition: all 0.3s ease-in-out;
 }
 
 .subscribe-modal .close-button:hover {
@@ -52,6 +65,17 @@
     bottom: 0px;
     left: 0px;
     right: 0px;
-    margin: 20px;
+    margin: 30px;
     z-index: 1;
+}
+
+@media only screen and (max-width: 700px) {
+	.subscribe-modal {
+        height: 500px;
+        width: 95%;
+    }
+
+    .subscribe-modal .header {
+        font-size: 26px;
+    }
 }

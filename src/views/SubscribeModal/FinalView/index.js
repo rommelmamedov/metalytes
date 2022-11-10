@@ -12,8 +12,7 @@ export const FinalView = ({ email, walletAddress, onCompleted }) => {
 	var didSubscribe = false;
 
 	useEffect(() => {
-		if (didSubscribe == false) {
-			console.log('Subscribe with email: ' + email);
+		if (didSubscribe === false) {
 			mailchimpSubscribe({ EMAIL: email, MERGE1: walletAddress });
 			didSubscribe = true;
 		}
@@ -27,7 +26,7 @@ export const FinalView = ({ email, walletAddress, onCompleted }) => {
 					mailchimpSubscribe = subscribe;
 				}
 				return (
-					<div className="thank-you">
+					<div className="final-view">
 						{status === 'sending' && (
 							<div>
 								<ColorRing visible={true} height="80" width="80" ariaLabel="blocks-loading" wrapperStyle={{}} wrapperClass="blocks-wrapper" colors={['#69F08F', '#69F08F', '#69F08F', '#69F08F', '#69F08F']} />
@@ -35,8 +34,8 @@ export const FinalView = ({ email, walletAddress, onCompleted }) => {
 						)}
 						{status === 'success' && (
 							<div className="success-view">
-								<h1 className="heading"> Thank you for subscribing ! </h1>
-								<SubmitButton text="Go back to main page" onClick={onCompleted} />
+								<h1 className="header"> Thank&#160;you for subscribing&#160;! </h1>
+								<SubmitButton text="Go back to the main page" onClick={onCompleted} />
 							</div>
 						)}
 						{status === 'error' && <div style={{ color: 'red' }} dangerouslySetInnerHTML={{ __html: message }} />}

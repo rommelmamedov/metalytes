@@ -13,21 +13,19 @@ export const SubscribeModal = () => {
 	const [modalIsOpen, setIsOpen] = React.useState(true);
 	const [currentStep, setCurrentStep] = React.useState(1);
 
-	const [email, setEmail] = React.useState('jere4@react.ca');
-	const [walletAddress, setWalletAddress] = React.useState('0x2000000000000000000000000000000000000000');
+	const [email, setEmail] = React.useState('');
+	const [walletAddress, setWalletAddress] = React.useState('');
 
 	function closeModal() {
 		setIsOpen(false);
 	}
 
 	function handleEnterEmailCompleted(_email) {
-		console.log('handleEnterEmailCompleted, email: ' + _email);
 		setEmail(_email);
 		setCurrentStep(2);
 	}
 
 	function handleConnectWalletCompleted(_walletAddress) {
-		console.log('handleConnectWalletCompleted, walletAddress: ' + _walletAddress);
 		setWalletAddress(_walletAddress);
 		setCurrentStep(3);
 	}

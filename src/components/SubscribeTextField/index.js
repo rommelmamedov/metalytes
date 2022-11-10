@@ -1,19 +1,23 @@
+import { useCallback } from 'react';
 import './style.css';
 
-export const SubscribeTextField = ({ value, onClick, onChange }) => {
-	const handleKeyDown = event => {
-		if (event.key === 'Enter') {
-			event.preventDefault();
-			if (typeof onClick === 'function') {
-				onClick({});
+export const SubscribeTextField = ({ value, onConfirm, onChange }) => {
+	const handleKeyDown = useCallback(
+		event => {
+			if (event.key === 'Enter') {
+				event.preventDefault();
+				if (typeof onConfirm === 'function') {
+					onConfirm({});
+				}
 			}
-		}
-	};
+		},
+		[onConfirm]
+	);
 
 	return (
-		<div className="box">
+		<div className="subscribe-textfield">
 			<input id="email" className="email-input" type="email" value={value} placeholder="email@example.com" onChange={onChange} onKeyDown={handleKeyDown} />
-			<button className="subscribe-button" onClick={onClick}>
+			<button className="subscribe-button" onClick={onConfirm}>
 				Subscribe
 			</button>
 		</div>

@@ -45,11 +45,8 @@ export const ConnectWalletView = ({ onCompleted }) => {
 	}, [activate]);
 
 	return (
-		<section className="connect-wallet">
-			<h1 className="heading">
-				{' '}
-				Connect your wallet <br></br> to sign up for later
-			</h1>
+		<section className="connect-wallet-view">
+			<h1 className="header"> Connect your wallet to sign&#160;up for later</h1>
 			<div className="connection-options">
 				<ConnectionButton icon={metamaskIcon} title="Metamask" onClick={handleMetamaskClick} />
 				<ConnectionButton icon={coinbaseIcon} title="Coinbase" onClick={handleCoinbaseClick} />

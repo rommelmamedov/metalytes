@@ -1,7 +1,4 @@
 import { useState, useCallback } from 'react';
-
-import { StepHeading } from 'components/StepHeading';
-import { StepDescription } from 'components/StepDescription';
 import { SubscribeTextField } from 'components/SubscribeTextField';
 import './style.css';
 
@@ -19,33 +16,34 @@ export const EnterEmailView = ({ onCompleted }) => {
 		return true;
 	};
 
-	const handleClick = event => {
-		console.log('onClick :' + email);
-		console.log(emailValidation());
-		if (emailValidation()) {
-			onCompleted(email);
-		}
-	};
+	const handleTextfieldConfirm = useCallback(
+		event => {
+			if (emailValidation()) {
+				onCompleted(email);
+			}
+		},
+		[email, onCompleted]
+	);
 
-	const handleChange = useCallback(
+	const handleTextfieldChange = useCallback(
 		event => {
 			setEmail(event.target.value);
+			if (emailError !== '') {
+				setEmailError('');
+			}
 		},
-		[setEmail]
+		[setEmail, emailError]
 	);
 
 	return (
-		<div className="enter-email">
+		<div className="enter-email-view">
 			<div>
-				<StepHeading className="heading" text="Subscribe for updates" />
-				<StepDescription
-					className="description"
-					text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-				/>
+				<h1 className="header"> Subscribe for updates </h1>
+				<p className="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 			</div>
 			<div className="textfield-box">
-				<SubscribeTextField className="subscribe-textfield" value={email} onClick={handleClick} onChange={handleChange} />
-				<span>{emailError}</span>
+				<SubscribeTextField className="subscribe-textfield" value={email} onConfirm={handleTextfieldConfirm} onChange={handleTextfieldChange} />
+				<p className="email-error">{emailError}</p>
 			</div>
 		</div>
 	);
