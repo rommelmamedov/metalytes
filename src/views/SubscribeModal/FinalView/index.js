@@ -1,16 +1,14 @@
 import { useEffect } from 'react';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
-import { ColorRing } from 'react-loader-spinner';
-
+import { LoaderSpinner } from 'components/LoaderSpinner';
 import { SubmitButton } from 'components/SubmitButton';
 import './style.css';
 
+const postUrl = `${process.env.REACT_APP_MAILCHIMP_URL}?u=${process.env.REACT_APP_MAILCHIMP_U}&id=${process.env.REACT_APP_MAILCHIMP_ID}`;
+let mailchimpSubscribe = null;
+let didSubscribe = false;
+
 export const FinalView = ({ email, walletAddress, onCompleted }) => {
-	const postUrl = `${process.env.REACT_APP_MAILCHIMP_URL}?u=${process.env.REACT_APP_MAILCHIMP_U}&id=${process.env.REACT_APP_MAILCHIMP_ID}`;
-
-	var mailchimpSubscribe = null;
-	var didSubscribe = false;
-
 	useEffect(() => {
 		if (didSubscribe === false) {
 			mailchimpSubscribe({ EMAIL: email, MERGE1: walletAddress });
@@ -29,7 +27,7 @@ export const FinalView = ({ email, walletAddress, onCompleted }) => {
 					<div className="final-view">
 						{status === 'sending' && (
 							<div>
-								<ColorRing visible={true} height="80" width="80" ariaLabel="blocks-loading" wrapperStyle={{}} wrapperClass="blocks-wrapper" colors={['#69F08F', '#69F08F', '#69F08F', '#69F08F', '#69F08F']} />
+								<LoaderSpinner />
 							</div>
 						)}
 						{status === 'success' && (

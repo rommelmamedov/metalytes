@@ -1,7 +1,7 @@
 import ReactModal from 'react-modal';
-import React from 'react';
-import { VscChromeClose } from 'react-icons/vsc';
+import { useState, useCallback } from 'react';
 
+import xmarkIcon from 'assets/images/xmark.svg';
 import { EnterEmailView } from './EnterEmailView';
 import { ConnectWalletView } from './ConnectWalletView';
 import { FinalView } from './FinalView';
@@ -10,30 +10,36 @@ import './style.css';
 ReactModal.setAppElement('#root');
 
 export const SubscribeModal = () => {
-	const [modalIsOpen, setIsOpen] = React.useState(true);
-	const [currentStep, setCurrentStep] = React.useState(1);
+	const [modalIsOpen, setIsOpen] = useState(true);
+	const [currentStep, setCurrentStep] = useState(1);
 
-	const [email, setEmail] = React.useState('');
-	const [walletAddress, setWalletAddress] = React.useState('');
+	const [email, setEmail] = useState('');
+	const [walletAddress, setWalletAddress] = useState('');
 
-	function closeModal() {
+	const closeModal = useCallback(() => {
 		setIsOpen(false);
-	}
+	}, [setIsOpen]);
 
-	function handleEnterEmailCompleted(_email) {
-		setEmail(_email);
-		setCurrentStep(2);
-	}
+	const handleEnterEmailCompleted = useCallback(
+		_email => {
+			setEmail(_email);
+			setCurrentStep(2);
+		},
+		[setEmail, setCurrentStep]
+	);
 
-	function handleConnectWalletCompleted(_walletAddress) {
-		setWalletAddress(_walletAddress);
-		setCurrentStep(3);
-	}
+	const handleConnectWalletCompleted = useCallback(
+		_walletAddress => {
+			setWalletAddress(_walletAddress);
+			setCurrentStep(3);
+		},
+		[setWalletAddress, setCurrentStep]
+	);
 
 	return (
 		<ReactModal isOpen={modalIsOpen} onRequestClose={closeModal} className="subscribe-modal" overlayClassName="subscribe-modal-overlay">
 			<button className="close-button" onClick={closeModal}>
-				<VscChromeClose className="close-icon" />
+				<img src={xmarkIcon} alt={'close-icon'} />
 			</button>
 			<div className="content">
 				{currentStep === 1 && <EnterEmailView onCompleted={handleEnterEmailCompleted} />}

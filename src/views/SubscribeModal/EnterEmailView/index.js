@@ -6,7 +6,7 @@ export const EnterEmailView = ({ onCompleted }) => {
 	const [email, setEmail] = useState('');
 	const [emailError, setEmailError] = useState('');
 
-	const emailValidation = () => {
+	const emailValidation = useCallback(() => {
 		const regex = /^(([^<>()[\].,;:\s@"]+(.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+.)+[^<>()[\].,;:\s@"]{2,})$/i;
 		if (!email || regex.test(email) === false) {
 			setEmailError('email is not valid');
@@ -14,7 +14,7 @@ export const EnterEmailView = ({ onCompleted }) => {
 		}
 		setEmailError('');
 		return true;
-	};
+	}, [email, setEmailError]);
 
 	const handleTextfieldConfirm = useCallback(
 		event => {
@@ -22,7 +22,7 @@ export const EnterEmailView = ({ onCompleted }) => {
 				onCompleted(email);
 			}
 		},
-		[email, onCompleted]
+		[email, onCompleted, emailValidation]
 	);
 
 	const handleTextfieldChange = useCallback(

@@ -6,9 +6,7 @@ export const SubscribeTextField = ({ value, onConfirm, onChange }) => {
 		event => {
 			if (event.key === 'Enter') {
 				event.preventDefault();
-				if (typeof onConfirm === 'function') {
-					onConfirm({});
-				}
+				onConfirm?.();
 			}
 		},
 		[onConfirm]
