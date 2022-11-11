@@ -1,0 +1,57 @@
+.enter-email-view {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+}
+
+.enter-email-view .header {
+    margin-top: 100px;
+}
+
+.enter-email-view .description {
+	font-family: 'Monument Extended Light';
+    font-weight: 250;
+    font-size: 14px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: 0.02em;
+	color: var(--gray);
+    margin-left: 30px;
+    margin-right: 30px;
+	margin-bottom: 60px;
+    text-align: center;
+}
+
+.enter-email-view .textfield-box {
+    width: 100%;
+    max-width: 630px;
+    margin-bottom: 120px;
+}
+
+.enter-email-view .textfield-box .email-error {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    height: 0;
+    font-size: var(--fs-12);
+    color: red;
+}
+
+@media only screen and (max-width: 700px) {
+    .enter-email-view .header {
+        margin-top: 80px;
+    }
+    
+	.enter-email-view .description {
+		font-size: 12px;
+		margin-bottom: 20px;
+	}
+
+    .enter-email-view .textfield-box {
+        margin-bottom: 100px;
+    }
+}
